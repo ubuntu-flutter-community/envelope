@@ -14,6 +14,10 @@ Future<void> main() async {
   registerService(AccountsService.new);
 
   WidgetsFlutterBinding.ensureInitialized();
-  await YaruWindowTitleBar.ensureInitialized();
+  try {
+    await YaruWindowTitleBar.ensureInitialized();
+  } catch (e) {
+    print("Yaru title bar failed to initialize");
+  }
   runApp(const ProviderScope(child: EnvelopeApp()));
 }
