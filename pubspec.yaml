@@ -47,6 +47,7 @@ dependencies:
   ubuntu_service: ^0.3.1
   json_annotation: ^4.8.1
   yaru_icons: ^2.4.0
+  logger: ^2.0.2+1
 
 dev_dependencies:
   flutter_test:

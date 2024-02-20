@@ -27,12 +27,13 @@ class EnvelopeApp extends HookConsumerWidget {
               body: YaruMasterDetailPage(
             length: 10,
             appBar: YaruWindowTitleBar(
+                heroTag: null,
                 title: const Text("Folders"),
-                leading: accounts.hasData
-                    ? AccountPicker(
-                        setAccount: (account) {},
-                        initialAccount: accounts.data![0].id!)
-                    : const Icon(YaruIcons.user)),
+                actions: [
+                  Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: AccountPicker(setAccount: (account) {}))
+                ]),
             tileBuilder: (context, index, selected, availableWidth) {
               return YaruMasterTile(title: Text("Folder $index"));
             },
@@ -41,6 +42,7 @@ class EnvelopeApp extends HookConsumerWidget {
               return YaruMasterDetailPage(
                   length: 35,
                   appBar: YaruWindowTitleBar(
+                      heroTag: null,
                       leading: navigator.canPop()
                           ? YaruBackButton(onPressed: navigator.pop)
                           : const Icon(YaruIcons.folder),
@@ -55,6 +57,7 @@ class EnvelopeApp extends HookConsumerWidget {
                     final navigator = Navigator.of(context);
                     return Scaffold(
                         appBar: YaruWindowTitleBar(
+                            heroTag: null,
                             leading: navigator.canPop()
                                 ? YaruBackButton(onPressed: navigator.pop)
                                 : const Icon(YaruIcons.mail),
