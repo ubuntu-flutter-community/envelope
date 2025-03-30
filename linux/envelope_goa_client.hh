@@ -1,12 +1,15 @@
 #include <functional>
+#include <memory>
+#define GOA_API_IS_SUBJECT_TO_CHANGE
 #include <goa/goa.h>
 
 class EnvelopeGoaClient {
-    std::function<void(EnvelopeGoaClient)> onCreate;
+    std::function<void(EnvelopeGoaClient&)> _onCreate;
+    GoaClient *_client;
 
-    void handleGoaClient(Goa)
+    void handleGoaClient(GoaClient *client);
 
-    EnvelopeGoaClient(decltype(onCreate) cb) {
-        
+    EnvelopeGoaClient(decltype(_onCreate) cb) {
+        this->_onCreate = cb;
     }
-}
+};

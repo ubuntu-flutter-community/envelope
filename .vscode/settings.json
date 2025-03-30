@@ -1,4 +1,7 @@
 {
     "cmake.configureOnOpen": false,
-    "cmake.sourceDirectory": "/home/aleks/Projects/envelope/linux"
+    "cmake.sourceDirectory": "/home/aleks/Projects/envelope/linux",
+    "files.associations": {
+        "functional": "cpp"
+    }
 }
